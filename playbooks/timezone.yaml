@@ -1,0 +1,9 @@
+---
+- name: Timezone
+  hosts: all
+  become: true
+  tasks:
+  - name: Set timezone to America/Marigot
+    community.general.timezone:
+      name: America/Marigot
+
