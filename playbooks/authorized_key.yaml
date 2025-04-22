@@ -1,0 +1,9 @@
+---
+- name: Authorized Key
+  hosts: all
+  tasks:
+  - name: Set authorized key
+    ansible.posix.authorized_key:
+      user: "{{ ansible_user }}"
+      state: present
+      key: "{{ lookup('file', '~/.ssh/jumpkey.pub') }}"
