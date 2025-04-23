@@ -1,46 +1,56 @@
 ---
 all:
   hosts:
-    stapp01.stratos.xfusioncorp.com:
-    stapp02.stratos.xfusioncorp.com:
-    stapp03.stratos.xfusioncorp.com:
-    stlb01.stratos.xfusioncorp.com:
-    stdb01.stratos.xfusioncorp.com:
-    ststor01.stratos.xfusioncorp.com:
-    stbkp01.stratos.xfusioncorp.com:
-    stmail01.stratos.xfusioncorp.com:
-    jump_host.stratos.xfusioncorp.com:
-    jenkins.stratos.xfusioncorp.com:
+    stapp01:
+      ansible_host: stapp01.stratos.xfusioncorp.com
+    stapp02:
+      ansible_host: stapp02.stratos.xfusioncorp.com
+    stapp03:
+      ansible_host: stapp03.stratos.xfusioncorp.com
+    stlb01:
+      sansible_host: stlb01.stratos.xfusioncorp.com
+    stdb01:
+      ansible_host: stdb01.stratos.xfusioncorp.com
+    ststor01:
+      sansible_host: ststor01.stratos.xfusioncorp.com
+    stbkp01:
+      sansible_host: stbkp01.stratos.xfusioncorp.com
+    stmail01:
+      ansible_host: stmail01.stratos.xfusioncorp.com
+    jump_host:
+      ansible_host: jump_host.stratos.xfusioncorp.com
+    jenkins:
+      ansible_host: jenkins.stratos.xfusioncorp.com
 
   children:
     application:
       hosts:
-        stapp[01:03].stratos.xfusioncorp.com:
+        stapp[01:03]:
 
     data:
       hosts:
-        stdb01.stratos.xfusioncorp.com:
+        stdb01:
 
     lb:
       hosts:
-        stlb01.stratos.xfusioncorp.com:
+        stlb01:
 
     storage:
       hosts:
-        ststor01.stratos.xfusioncorp.com:
+        ststor01:
 
     backup:
       hosts:
-        stbkp01.stratos.xfusioncorp.com:
+        stbkp01:
 
     mail:
       hosts:
-        stmail01.stratos.xfusioncorp.com:
+        stmail01:
 
     jump:
       hosts:
-        jump_host.stratos.xfusioncorp.com:
+        jump_host:
 
     jenkins:
       hosts:
-        jenkins.stratos.xfusioncorp.com:
+        jenkins:
